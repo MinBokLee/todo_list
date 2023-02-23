@@ -1,0 +1,25 @@
+spring:
+  # DB 연결
+  datasource:
+    # 설치된 H2 DB와 연결 URL
+    url: jdbc:h2:tcp://localhost/~/test
+    # 접속을 위한 드라이버
+    driver-class-name: org.h2.Driver
+    # springboot 2.4 부터는  ysername이 꼭 있어야 하고, 없으면 에러 발생
+    username: sa
+  jpa:
+    # JPA가 수행하는 SQL을 볼 수 있다.
+    open-in-view: false
+    show-sql: true
+    # 객체를 보고 자동으로 테이블 생성 여부, 생성 - create, - 비생성 - none
+    hibernate:
+      ddl-auto: update
+    #콘솔 확인을 위한 always
+    output:
+      ansi:
+        enabled: always
+# 파라미터 확인을 휘한 trace
+logging:
+  level:
+    org.hibrnate.type: trace
+
