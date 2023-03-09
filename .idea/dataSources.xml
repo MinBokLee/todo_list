@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="jdbc:h2:tcp://localhost:9092/~/test" uuid="3e3d3546-d4b7-436f-913c-a6e0f349da0a">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/~/test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="@121.66.27.171" uuid="fc0a5edf-3839-4257-b31e-c9ea88be5bf9">
+      <driver-ref>oracle</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@121.66.27.171:246:XE</jdbc-url>
+    </data-source>
+  </component>
+</project>

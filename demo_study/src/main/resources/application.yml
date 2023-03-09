@@ -1,14 +1,20 @@
 spring:
+  thymeleaf:
+    prefix: classpath:/static
   # DB 연결
   datasource:
     # 설치된 H2 DB와 연결 URL
-    url: jdbc:h2:tcp://localhost/~/test
+    url: jdbc:oracle:thin:@121.66.27.171:246:xe
     # 접속을 위한 드라이버
-    driver-class-name: org.h2.Driver
+    driver-class-name: oracle.jdbc.driver.OracleDriver
     # springboot 2.4 부터는  ysername이 꼭 있어야 하고, 없으면 에러 발생
-    username: sa
+    username: com4in
+    password: com4in201
+
   jpa:
     # JPA가 수행하는 SQL을 볼 수 있다.
+    database: oracle
+    database-platform: org.hibernate.dialect.Oracle10gDialect
     open-in-view: false
     show-sql: true
     # 객체를 보고 자동으로 테이블 생성 여부, 생성 - create, - 비생성 - none
@@ -18,8 +24,29 @@ spring:
     output:
       ansi:
         enabled: always
+  mvc:
+    view:
+      suffix: html
+
 # 파라미터 확인을 휘한 trace
 logging:
   level:
     org.hibrnate.type: trace
 
+server:
+  port: 8887
+
+springdoc:
+  packages-to-scan: com.test.demo
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+  swagger-ui:
+    path: demo-ui.html            # Swagger UI 경로 => localhost:8000/demo-ui.html
+    tags-sorter: alpha            # alpha: 알파벳 순 태그 정렬, method: HTTP Method 순 정렬
+    operations-sorter: alpha      # alpha: 알파벳 순 태그 정렬, method: HTTP Method 순 정렬
+  api-docs:
+    path: /api-docs/json
+    groups:
+      enabled: true
+  cache:
+    disabled: true
